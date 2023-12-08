@@ -26,6 +26,10 @@
 		si,sia81xx_type = "sia8109";
 		si,sia81xx_reset = <&pio 139 0>;
 		si,sia81xx_owi = <&pio 139 0>;
+<<<<<<< HEAD
+=======
+		si,sia_boost_vol_support = <1>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		pinctrl-names = "sia81xx_gpio";
 		pinctrl-0 = <&sia81xx_gpio_L>;
 		si,sia81xx_disable_pin = <0>;

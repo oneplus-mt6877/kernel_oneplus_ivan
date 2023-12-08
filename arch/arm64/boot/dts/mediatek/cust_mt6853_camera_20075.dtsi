@@ -302,10 +302,17 @@
 
 	vcammainaf-supply = <&mt_pmic_vtp_ldo_reg>;
 
+<<<<<<< HEAD
 	cam0_enable_sensor = "ov48b_mipi_raw";
 	cam1_enable_sensor = "ov32a_mipi_raw imx471_mipi_raw";
 	cam2_enable_sensor = "hi846_mipi_raw";
 	cam3_enable_sensor = "gc02k0_mipi_raw";
+=======
+	cam0_enable_sensor = "ov48b_chivasmipi_raw";
+	cam1_enable_sensor = "ov32a_chivasmipi_raw imx471_mipi_raw";
+	cam2_enable_sensor = "hi846_chivasmipi_raw";
+	cam3_enable_sensor = "gc02k0_chivasmipi_raw";
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 
 	status = "okay";
 };

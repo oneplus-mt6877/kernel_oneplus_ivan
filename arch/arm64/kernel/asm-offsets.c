@@ -165,6 +165,10 @@ int main(void)
 #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
   DEFINE(TRAMP_VALIAS,		TRAMP_VALIAS);
 #endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #ifdef CONFIG_OPLUS_SECURE_GUARD
 #ifdef CONFIG_OPLUS_ROOT_CHECK
   DEFINE(PROOT_TSK_CRED,	offsetof(struct task_struct, cred));
@@ -179,5 +183,12 @@ int main(void)
 #endif
 #endif /* CONFIG_OPLUS_ROOT_CHECK */
 #endif /* CONFIG_OPLUS_SECURE_GUARD */
+<<<<<<< HEAD
+=======
+#ifdef CONFIG_ARM_SDE_INTERFACE
+  DEFINE(SDEI_EVENT_INTREGS,	offsetof(struct sdei_registered_event, interrupted_regs));
+  DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
+#endif
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
   return 0;
 }

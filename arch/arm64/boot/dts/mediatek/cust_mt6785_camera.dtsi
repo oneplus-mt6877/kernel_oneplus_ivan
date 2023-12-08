@@ -38,13 +38,21 @@
 	};
 	camera1_rst_low: camera1_rst_output_low@gpio124 {
 		pins_cmd_dat {
+<<<<<<< HEAD
 			pinmux = <PINMUX_GPIO114__FUNC_GPIO114>;
+=======
+			pinmux = <PINMUX_GPIO124__FUNC_GPIO124>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 			output-low;
 		};
 	};
 	camera1_rst_high: camera1_rst_output_high@gpio124 {
 		pins_cmd_dat {
+<<<<<<< HEAD
 			pinmux = <PINMUX_GPIO114__FUNC_GPIO114>;
+=======
+			pinmux = <PINMUX_GPIO124__FUNC_GPIO124>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 			output-high;
 		};
 	};

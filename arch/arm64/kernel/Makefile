@@ -73,7 +73,13 @@ AFLAGS_head.o += -DVMLINUX_PATH="\"$(realpath $(objtree)/vmlinux)\""
 endif
 
 #ifdef CONFIG_OPLUS_SECURE_GUARD
+<<<<<<< HEAD
 obj-$(CONFIG_OPLUS_SECURE_GUARD)		+=  rootguard/
 obj-$(CONFIG_OPLUS_SECURE_GUARD)                +=  oplus_root.o
 #endif /* CONFIG_OPLUS_SECURE_GUARD */
 
+=======
+obj-$(CONFIG_OPLUS_SECURE_GUARD)	+= rootguard/
+obj-$(CONFIG_OPLUS_SECURE_GUARD)	+= oplus_root.o
+#endif /* CONFIG_OPLUS_SECURE_GUARD */
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes

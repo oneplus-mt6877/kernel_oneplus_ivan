@@ -46,6 +46,7 @@
 			kaslr-seed = <0 0>;
 	};
 
+<<<<<<< HEAD
 	//#ifdef OPLUS_FEATURE_THERMAL_HORAE
 	shell_front {
 		compatible = "oplus,shell-temp";
@@ -60,6 +61,8 @@
 	};
 	//#endif /* OPLUS_FEATURE_THERMAL_HORAE */
 
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	cpus {
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -234,7 +237,11 @@
 		};
 	};
 
+<<<<<<< HEAD
 	disp_leds {
+=======
+	disp_leds: disp_leds {
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		compatible = "mediatek,disp-leds";
 			backlight {
 			label = "lcd-backlight";
@@ -269,6 +276,23 @@
 		};
 	};
 
+<<<<<<< HEAD
+=======
+// #ifdef OPLUS_FEATURE_POWER_THERMAL
+	shell_front {
+		compatible = "oplus,shell-temp";
+	};
+
+	shell_frame {
+		compatible = "oplus,shell-temp";
+	};
+
+	shell_back {
+		compatible = "oplus,shell-temp";
+	};
+// #endif /* OPLUS_FEATURE_POWER_THERMAL */
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	mtk_lpm: mtk_lpm {
 		compatible = "mediatek,mtk-lpm";
 		#address-cells = <2>;
@@ -283,7 +307,12 @@
 				<&level_mali0 &level_mali1>,
 				<&level_mali2 &level_mali3 &level_mali4>,
 				<&level_i2c0>,
+<<<<<<< HEAD
 				<&level_btif_tx &level_btif_rx &level_bt>;
+=======
+				<&level_btif_tx &level_btif_rx &level_bt>,
+				<&level_cam1 &level_cam2>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 
 		resource-ctrl = <&bus26m &infra &syspll>,
 				<&dram_s0 &dram_s1>;
@@ -361,6 +390,17 @@
 				target = <&bt>;
 				value = <0 0 0 0>;
 			};
+<<<<<<< HEAD
+=======
+			level_cam1: level_cam1 {
+					target = <&cam1>;
+					value = <0 0 0 0>;
+			};
+			level_cam2: level_cam2 {
+					target = <&cam2>;
+					value = <0 1 0 0>;
+			};
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		};
 
 		resource-ctrl-list {
@@ -435,6 +475,17 @@
 		#size-cells = <2>;
 		ranges;
 
+<<<<<<< HEAD
+=======
+		reserve-memory-ssmr {
+			compatible = "mediatek,reserve-memory-ssmr";
+			no-map;
+			size = <0 0x1000>;
+			alignment = <0 0x1000>;
+			alloc-ranges = <0 0xc0000000 4 0x00000000>;
+		};
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		zmc-default {
 			compatible = "mediatek,zone_movable_cma";
 			size = <0 0x35000000>;
@@ -474,6 +525,7 @@
 			alloc-ranges = <0 0x50000000 0 0x40000000>;
 		};
 
+<<<<<<< HEAD
 #ifdef CONFIG_MICROTRUST_TEE_SUPPORT
 		soter-shared-mem {
 			compatible = "microtrust,shared_mem";
@@ -490,13 +542,21 @@
 		};
 #endif
 
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		reserve-memory-scp_share {
 			compatible = "mediatek,reserve-memory-scp_share";
 			no-map;
 #ifdef CONFIG_MTK_TINYSYS_SCP_LOGGER_SUPPORT
+<<<<<<< HEAD
 			size = <0 0x00300000>; /*3 MB share mem size */
 #else
 			size = <0 0x00400000>;
+=======
+			size = <0 0x00320000>; /*3MB + 128K share mem size */
+#else
+			size = <0 0x001A0000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #endif
 			alignment = <0 0x1000000>;
 			alloc-ranges = <0 0x50000000 0 0x40000000>;
@@ -803,8 +863,13 @@
 		reg = <0 0x10002000 0 0x1000>;
 	};
 
+<<<<<<< HEAD
 	pericfg@10003000 {
 		compatible = "mediatek,pericfg";
+=======
+	pericfg: pericfg@10003000 {
+		compatible = "mediatek,pericfg", "syscon";
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		reg = <0 0x10003000 0 0x1000>;
 	};
 
@@ -1346,7 +1411,10 @@
 			interrupts = <122 IRQ_TYPE_LEVEL_HIGH 122 0>;
 			status = "okay";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #ifdef CONFIG_REGULATOR_MT6315
 			mt635x_ot_debug: mt635x-ot-debug {
 				compatible = "mediatek,mt635x-ot-debug";
@@ -1440,7 +1508,11 @@
 			<0 0x1022C000 0 0x1000>, /*PD_MD_MISC*/
 			<0 0x1022E000 0 0x1000>; /*SRAM*/
 		interrupts = <GIC_SPI 253 IRQ_TYPE_LEVEL_HIGH>; /*157/221/285*/
+<<<<<<< HEAD
 		mediatek,dpmaif_capability = <6>;
+=======
+		mediatek,dpmaif_capability = <14>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		/*clocks = ; clock-names = ; set in mddriver node */
 	};
 
@@ -1448,7 +1520,11 @@
 		compatible = "mediatek,mddriver";
 		mediatek,mdhif_type = <6>; /* bit0~3: CLDMA|CCIF|DPMAIF */
 		mediatek,md_id = <0>;
+<<<<<<< HEAD
 		mediatek,cldma_capability = <6>;
+=======
+		mediatek,cldma_capability = <14>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		reg = <0 0x10209000 0 0x1000>, /*AP_CCIF_BASE*/
 			<0 0x1020a000 0 0x1000>; /*MD_CCIF_BASE*/
 		interrupts = <GIC_SPI 110 IRQ_TYPE_EDGE_RISING>,
@@ -1647,7 +1723,11 @@
 		reg = <0 0x10025000 0 0x1000>;
 	};
 
+<<<<<<< HEAD
 	pwm@11006000 {
+=======
+	pwm@10048000 {
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		compatible = "mediatek,pwm";
 		reg = <0 0x10048000 0 0x1000>;
 		interrupts = <GIC_SPI 254 IRQ_TYPE_LEVEL_HIGH>;
@@ -1690,8 +1770,16 @@
 			<0 0x11020000 0 0x1000>,
 			<0 0x10030000 0 0x1000>,
 			<0 0x1020e000 0 0x1000>,
+<<<<<<< HEAD
 			<0 0x10033000 0 0x1000>;
 		interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_HIGH>;
+=======
+			<0 0x10033000 0 0x1000>,
+			<0 0x00111000 0 0x1000>;
+		interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&infracfg_ao_clk CLK_IFRAO_DEVICE_APC>;
+		clock-names = "devapc-infra-clock";
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	ap_ccif0@10209000 {
@@ -1769,12 +1857,17 @@
 	};
 
 	cqdma-controller@10212000 {
+<<<<<<< HEAD
 		compatible = "mediatek,mt6877-cqdma",
 			"mediatek,mt-cqdma-v1";
+=======
+		compatible = "mediatek,mt6877-cqdma";
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		reg = <0 0x10212000 0 0x80>,
 			<0 0x10212100 0 0x80>,
 			<0 0x10212200 0 0x80>,
 			<0 0x10212300 0 0x80>;
+<<<<<<< HEAD
 		interrupts = <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>,
@@ -1785,6 +1878,17 @@
 		dma-channel-mask = <63>;
 		dma-channels = <4>;
 		dma-requests = <4>;
+=======
+		interrupts = <GIC_SPI 198 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 199 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 201 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&infracfg_ao_clk CLK_IFRAO_CQ_DMA>;
+		clock-names = "cqdma";
+		dma-channel-mask = <63>;
+		dma-channels = <4>;
+		dma-requests = <10>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		#dma-cells = <1>;
 	};
 
@@ -1818,8 +1922,11 @@
 			     "mediatek,common-emicen";
 		reg = <0 0x10219000 0 0x1000>;
 		mediatek,emi-reg = <&emichn>;
+<<<<<<< HEAD
 		a2d_hash = <11>;
 		a2d_disph = <0>;
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	emiisu {
@@ -1962,7 +2069,11 @@
 		domain_cnt = <16>;
 		addr_align = <16>;
 		ap_region = <31>;
+<<<<<<< HEAD
 		ap_apc = <0 5 5 5 0 0 6 5>,
+=======
+		ap_apc = <0 5 5 5 2 0 6 5>,
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 			 <0 0 5 0 0 0 5 5>;
 		dump = <0x1f0 0x1f8 0x1fc>;
 		clear = <0x160 0xffffffff 16>,
@@ -3098,8 +3209,12 @@
 			"MTK_DRM_OPT_LAYER_REC",
 			"MTK_DRM_OPT_CLEAR_LAYER",
 			"MTK_DRM_OPT_LFR",
+<<<<<<< HEAD
 			"MTK_DRM_OPT_DYN_MIPI_CHANGE",
 			"MTK_DRM_OPT_SF_PF";
+=======
+			"MTK_DRM_OPT_DYN_MIPI_CHANGE";
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 
 		helper-value = <0>, /*MTK_DRM_OPT_STAGE*/
 			<1>, /*MTK_DRM_OPT_USE_CMDQ*/
@@ -3118,7 +3233,11 @@
 			<1>, /*MTK_DRM_OPT_ESD_CHECK_SWITCH*/
 			<1>, /*MTK_DRM_OPT_PRESENT_FENCE*/
 			<0>, /*MTK_DRM_OPT_RDMA_UNDERFLOW_AEE*/
+<<<<<<< HEAD
 			<1>, /*MTK_DRM_OPT_DSI_UNDERRUN_AEE*/
+=======
+			<0>, /*MTK_DRM_OPT_DSI_UNDERRUN_AEE*/
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 			<1>, /*MTK_DRM_OPT_HRT*/
 			<1>, /*MTK_DRM_OPT_HRT_MODE*/
 			<0>, /*MTK_DRM_OPT_DELAYED_TRIGGER*/
@@ -3138,6 +3257,7 @@
 			<1>, /*MTK_DRM_OPT_HBM*/
 			<0>, /*MTK_DRM_OPT_VDS_PATH_SWITCH*/
 			<0>, /*MTK_DRM_OPT_LAYER_REC*/
+<<<<<<< HEAD
 			<1>, /*MTK_DRM_OPT_CLEAR_LAYER*/
 			<1>, /*MTK_DRM_OPT_LFR*/
 			<1>, /*MTK_DRM_OPT_DYN_MIPI_CHANGE*/
@@ -3145,6 +3265,13 @@
 	};
 
 
+=======
+			<0>, /*MTK_DRM_OPT_CLEAR_LAYER*/
+			<1>, /*MTK_DRM_OPT_LFR*/
+			<1>; /*MTK_DRM_OPT_DYN_MIPI_CHANGE*/
+	};
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	disp_mutex0: disp_mutex@14001000 {
 		compatible = "mediatek,disp_mutex0",
 					"mediatek,mt6877-disp-mutex";
@@ -3381,7 +3508,11 @@
 		larb_groups = <0 1 2 4 7 9 11 13 14 16 17 19 20>;
 		larb0 = <8 7 8 9 8>;
 		larb1 = <7 8 8 9 8 7 8>;
+<<<<<<< HEAD
 		larb2 = <8 8 9 9 8>;
+=======
+		larb2 = <7 7 7 7 8>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		larb4 = <6 7 8 7 7 7 7 7 7 6 6 7>;
 		larb7 = <7 8 8 8 8 7 7 7 7 8 7 7 7 7 7>;
 		larb9 = <7 7 7 7 7 7 8 8 8 8 7 7 8 9 8 6 6 7
@@ -3665,6 +3796,7 @@
 		phy-names = "dphy";
 	};
 
+<<<<<<< HEAD
 	disp_leds {
 		compatible = "mediatek,disp-leds";
 
@@ -3677,6 +3809,8 @@
 		};
 	};
 
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	dsi_te: dsi_te {
 		compatible = "mediatek, dsi_te-eint";
 		status = "disabled";
@@ -4550,6 +4684,12 @@
 
 	fm: fm@18000000 {
 		compatible = "mediatek,fm";
+<<<<<<< HEAD
+=======
+		family-id = <0x6877>;
+		host-id = <0x6877>;
+		conn-id = <0x0206>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		interrupts = <GIC_SPI 637 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
@@ -4681,11 +4821,16 @@
 	seninf_top@1a004000 {
 		compatible = "mediatek,seninf_top";
 		reg = <0 0x1a004000 0 0x1000>;
+<<<<<<< HEAD
 
 		clocks =<&scpsys SCP_SYS_CSI>,
 			<&scpsys SCP_SYS_CAM>,
 			<&scpsys SCP_SYS_CAM_RAWA>,
 			<&scpsys SCP_SYS_CAM_RAWB>,
+=======
+		clocks =<&scpsys SCP_SYS_CSI>,
+			<&scpsys SCP_SYS_CAM>,
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 			<&camsys_main_clk CLK_CAM_M_SENINF>,
 			<&topckgen_clk CLK_TOP_SENINF_SEL>,
 			<&topckgen_clk CLK_TOP_SENINF1_SEL>,
@@ -4705,11 +4850,16 @@
 			<&topckgen_clk CLK_TOP_UNIVPLL_D6_D8>,
 			<&topckgen_clk CLK_TOP_MAINPLL_D4_D2>,
 			<&topckgen_clk CLK_TOP_UNIVPLL_D5>;
+<<<<<<< HEAD
 
 		clock-names = "SCP_SYS_CSI",
 			"SCP_SYS_CAM",
 			"ISP_SCP_SYS_RAWA",
 			"ISP_SCP_SYS_RAWB",
+=======
+		clock-names = "SCP_SYS_CSI",
+			"SCP_SYS_CAM",
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 			"CAMSYS_SENINF_CGPDN",
 			"TOP_MUX_SENINF",
 			"TOP_MUX_SENINF1",
@@ -4837,6 +4987,19 @@
 		};
 	};
 
+<<<<<<< HEAD
+=======
+	flashlights_moss: flashlights_moss {
+		compatible = "mediatek,flashlights_moss";
+		decouple = <1>;
+		channel@1 {
+			type = <0>;
+			ct = <0>;
+			part = <0>;
+			};
+	};
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	cam1_inner@1a038000 {
 		compatible = "mediatek,cam1_inner";
 		reg = <0 0x1a038000 0 0x8000>;
@@ -4852,13 +5015,21 @@
 		reg = <0 0x1a078000 0 0x8000>;
 	};
 
+<<<<<<< HEAD
 	cam1@1a030000 {
+=======
+	cam1: cam1@1a030000 {
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		compatible = "mediatek,cam1";
 		reg = <0 0x1a030000 0 0x8000>;
 		interrupts = <GIC_SPI 392 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
+<<<<<<< HEAD
 	cam2@1a050000 {
+=======
+	cam2: cam2@1a050000 {
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		compatible = "mediatek,cam2";
 		reg = <0 0x1a050000 0 0x8000>;
 		interrupts = <GIC_SPI 393 IRQ_TYPE_LEVEL_HIGH>;
@@ -5219,12 +5390,20 @@
 
 	memory_ssmr_features: memory-ssmr-features {
 		compatible = "mediatek,memory-ssmr-features";
+<<<<<<< HEAD
 		svp-size = <0 0x1A000000>;
+=======
+		svp-region-based-size = <0 0x1A000000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		iris-recognition-size = <0 0x10000000>;
 		2d_fr-size = <0 0>;
 		tui-size = <0 0x4000000>;
 		wfd-size = <0 0x4000000>;
+<<<<<<< HEAD
 		prot-sharedmem-size = <0 0x8000000>;
+=======
+		prot-region-based-size = <0 0x8000000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		ta-elf-size = <0 0x1000000>;
 		ta-stack-heap-size = <0 0x6000000>;
 		sdsp-tee-sharedmem-size = <0 0x1000000>;
@@ -5451,10 +5630,19 @@
 			<&infracfg_ao_clk CLK_IFRAO_SPI7_CK>;
 		clock-names = "parent-clk", "sel-clk", "spi-clk";
 	};
+<<<<<<< HEAD
     swtp: swtp {
     };
     swtp_1: swtp_1 {
     };
+=======
+//#ifdef OPLUS_VENDOR_SWTP
+	swtp: swtp {
+	};
+	swtp_1: swtp_1 {
+	};
+//#endif  /*OPLUS_VENDOR_SWTP*/
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 
 	i2c_common: i2c_common {
 		compatible = "mediatek,i2c_common";
@@ -5721,6 +5909,10 @@
 	};
 //#endif  OPLUS_FEATURE_SECURITY_COMMON
 
+<<<<<<< HEAD
+=======
+//#ifdef OPLUS_FEATURE_FINGERPRINT
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	oplus_fp_common:oplus_fp_common { //Slave driver and CS ID
 		compatible = "oplus,fp_common"; //Manufacture, and Model
 	};
@@ -5728,10 +5920,17 @@
 	goodix_fp: fingerprint {
 		compatible = "goodix,goodix_fp";
 	};
+<<<<<<< HEAD
 
 	jiiov_fp: jiiov_fp {
 		compatible = "jiiov,fingerprint";
 	};
+=======
+	jiiov_fp: jiiov_fp {
+		compatible = "jiiov,fingerprint";
+	};
+//#endif OPLUS_FEATURE_FINGERPRINT
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 
 	mtu3_0: mtu3_0@11201000 {
 		compatible = "mediatek,mt6877-mtu3";
@@ -5750,6 +5949,11 @@
 		phy-names = "port0_phy";
 		extcon = <&extcon_usb>;
 		dr_mode = "otg";
+<<<<<<< HEAD
+=======
+		mediatek,syscon-wakeup = <&pericfg 0x420 101>;
+		wakeup-source;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	xhci0: usb_xhci@11200000 {
@@ -5790,11 +5994,19 @@
 
 	extcon_usb: extcon_usb {
 		compatible = "mediatek,extcon-usb";
+<<<<<<< HEAD
+=======
+		support_u3;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	usb_boost_manager: usb_boost_manager {
 		compatible = "mediatek,usb_boost";
+<<<<<<< HEAD
 		boost_period = <30>;
+=======
+		boost_period = <0>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	mrdump_ext_rst: mrdump_ext_rst {
@@ -5931,7 +6143,12 @@
 			/* Rx Interrupt */
 		interrupts = <GIC_SPI 464 IRQ_TYPE_LEVEL_HIGH>,
 			/* Assert & FW log interrupt */
+<<<<<<< HEAD
 			<GIC_SPI 479 IRQ_TYPE_LEVEL_HIGH>;
+=======
+			<GIC_SPI 479 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 465 IRQ_TYPE_LEVEL_HIGH>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	afe: mt6877-afe-pcm@11210000 {
@@ -6111,7 +6328,10 @@
 		compatible = "mediatek,mt6359-sound";
 		mediatek,pwrap-regmap = <&pwrap>;
 	};
+<<<<<<< HEAD
 
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 //#ifdef OPLUS_ARCH_EXTENDS
 	audio_extend: audio_extend {
 		compatible = "oplus,asoc-audio";
@@ -6145,7 +6365,11 @@
 		mtk_dsp_capture1 = <0x1 0xffffffff 0xd 0x13 0x20000>;
 		mtk_dsp_a2dp = <0x1 0xffffffff 0xffffffff 0xffffffff 0x40000>;
 		mtk_dsp_dataprovider = <0x0 0xffffffff 0xf 0xffffffff 0x30000>;
+<<<<<<< HEAD
 		mtk_dsp_call_final = <0x5 0x0 0x10 0x14 0x18000>;
+=======
+		mtk_dsp_call_final = <0x5 0x4 0x10 0x14 0x18000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		mtk_dsp_fast = <0x5 0xffffffff 0xffffffff 0xffffffff 0x5000>;
 		mtk_dsp_ktv = <0x1 0x8 0x12 0xffffffff 0x10000>;
 		mtk_dsp_capture_raw = <0x1 0xffffffff 0xffffffff 0xffffffff 0x20000>;
@@ -6155,6 +6379,15 @@
 		mtk_dsp_mem_afe = <0x1 0x40000>; /* always enable */
 	};
 
+<<<<<<< HEAD
+=======
+	snd_scp_ultra: snd_scp_ultra {
+		compatible = "mediatek,snd_scp_ultra";
+		scp_ultra_dl_memif_id = <0x7>;
+		scp_ultra_ul_memif_id = <0xf>;
+	};
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	audio_sram@11212000 {
 		compatible = "mediatek,audio_sram";
 		reg = <0 0x11212000 0 0x18000>;
@@ -6274,7 +6507,11 @@
 
 //#ifdef OPLUS_FEATURE_AUDIODRIVER
 &audio_extend {
+<<<<<<< HEAD
 	//for nxp speaker
+=======
+//for nxp speaker
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	oplus,speaker-vendor = "nxp";
 	oplus,speaker-i2s-id = <3>;
 	oplus,speaker-i2s-id-in = <0>;
@@ -6283,6 +6520,7 @@
 };
 
 &i2c6 {
+<<<<<<< HEAD
 /*
 	tfa98xx: tfa98xx@34 {
 		compatible = "nxp,tfa98xx";
@@ -6291,15 +6529,24 @@
 		status = "okay";
 	};
 */
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	gate_ic: gate_ic@11 {
 		compatible = "mediatek,gate-ic-i2c";
 		gate-power-gpios = <&pio 107 0>;
 		reg = <0x11>;
+<<<<<<< HEAD
 		status = "disable";
 	};
 };
 
 
+=======
+		status = "okay";
+	};
+};
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 //#endif /* OPLUS_FEATURE_AUDIODRIVER */
 
 &pio {

@@ -75,12 +75,17 @@
 #endif
 
 	host_function = /bits/ 8 <MSDC_SD>;
+<<<<<<< HEAD
 //#ifdef OPLUS_FEATURE_SDCARD
 	cd_level = /bits/ 8 <MSDC_CD_HIGH>;
 //#else
 //	cd_level = /bits/ 8 <MSDC_CD_LOW>;
 //#endif /* OPLUS_FEATURE_SDCARD */
 
+=======
+
+	cd_level = /bits/ 8 <MSDC_CD_HIGH>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #ifndef CONFIG_FPGA_EARLY_PORTING
 	cd-gpios = <&pio 4 0>;
 #endif
@@ -201,6 +206,7 @@
 
 	msdc1_pins_ddr50: msdc1@ddr50 {
 		pins_cmd {
+<<<<<<< HEAD
 			drive-strength = /bits/ 8 <2>;
 		};
 		pins_dat {
@@ -208,15 +214,31 @@
 		};
 		pins_clk {
 			drive-strength = /bits/ 8 <2>;
+=======
+			drive-strength = /bits/ 8 <3>;
+		};
+		pins_dat {
+			drive-strength = /bits/ 8 <3>;
+		};
+		pins_clk {
+			drive-strength = /bits/ 8 <3>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		};
 	};
 
 	msdc1_pins_hs200: msdc1@hs200 {
 		pins_cmd {
+<<<<<<< HEAD
 			drive-strength = /bits/ 8 <3>;
 		};
 		pins_dat {
 			drive-strength = /bits/ 8 <3>;
+=======
+			drive-strength = /bits/ 8 <4>;
+		};
+		pins_dat {
+			drive-strength = /bits/ 8 <4>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		};
 		pins_clk {
 			drive-strength = /bits/ 8 <3>;

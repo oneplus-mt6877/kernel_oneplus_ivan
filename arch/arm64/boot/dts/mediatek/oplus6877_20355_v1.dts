@@ -93,7 +93,11 @@
 		reset-gpio = <&pio 15 0x1>;
 		//pinctrl-names = "default";
 		//pinctrl-0 = <&ctp_ts_int_active &ctp_ts_reset_active>;
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		vid_len = <2>;
 		tp_type = <8>;
 		// type of tp_dev ,TP-SAMSUNG = 8;
@@ -184,6 +188,10 @@
 };
 /*touch end*/
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 &pio {
 	mtkfb_pins_lcm_led_en1: lcm_led_en1_gpio {
 		pins_cmd_dat {
@@ -280,6 +288,50 @@
 	pinctrl-1 = <&mtkfb_pins_lcm_rst_out0_gpio>;
 	pinctrl-2 = <&mtkfb_pins_lcm_dsi_te>;
 	status = "okay";
+<<<<<<< HEAD
+=======
+
+	helper-value = <0>, /*MTK_DRM_OPT_STAGE*/
+		<1>, /*MTK_DRM_OPT_USE_CMDQ*/
+		<1>, /*MTK_DRM_OPT_USE_M4U*/
+		<0>, /*MTK_DRM_OPT_SODI_SUPPORT*/
+		<1>, /*MTK_DRM_OPT_IDLE_MGR*/
+		<0>, /*MTK_DRM_OPT_IDLEMGR_SWTCH_DECOUPLE*/
+		<1>, /*MTK_DRM_OPT_IDLEMGR_BY_REPAINT*/
+		<0>, /*MTK_DRM_OPT_IDLEMGR_ENTER_ULPS*/
+		<0>, /*MTK_DRM_OPT_IDLEMGR_KEEP_LP11*/
+		<0>, /*MTK_DRM_OPT_DYNAMIC_RDMA_GOLDEN_SETTING*/
+		<1>, /*MTK_DRM_OPT_IDLEMGR_DISABLE_ROUTINE_IRQ*/
+		<0>, /*MTK_DRM_OPT_MET_LOG*/
+		<1>, /*MTK_DRM_OPT_USE_PQ*/
+		<1>, /*MTK_DRM_OPT_ESD_CHECK_RECOVERY*/
+		<1>, /*MTK_DRM_OPT_ESD_CHECK_SWITCH*/
+		<1>, /*MTK_DRM_OPT_PRESENT_FENCE*/
+		<0>, /*MTK_DRM_OPT_RDMA_UNDERFLOW_AEE*/
+		<1>, /*MTK_DRM_OPT_DSI_UNDERRUN_AEE*/
+		<1>, /*MTK_DRM_OPT_HRT*/
+		<1>, /*MTK_DRM_OPT_HRT_MODE*/
+		<0>, /*MTK_DRM_OPT_DELAYED_TRIGGER*/
+		<1>, /*MTK_DRM_OPT_OVL_EXT_LAYER*/
+		<0>, /*MTK_DRM_OPT_AOD*/
+		<1>, /*MTK_DRM_OPT_RPO*/
+		<0>, /*MTK_DRM_OPT_DUAL_PIPE*/
+		<0>, /*MTK_DRM_OPT_DC_BY_HRT*/
+		<0>, /*MTK_DRM_OPT_OVL_WCG*/
+		<0>, /*MTK_DRM_OPT_OVL_SBCH*/
+		<1>, /*MTK_DRM_OPT_COMMIT_NO_WAIT_VBLANK*/
+		<0>, /*MTK_DRM_OPT_MET*/
+		<0>, /*MTK_DRM_OPT_REG_PARSER_RAW_DUMP*/
+		<0>, /*MTK_DRM_OPT_VP_PQ*/
+		<0>, /*MTK_DRM_OPT_GAME_PQ*/
+		<0>, /*MTK_DRM_OPT_MMPATH*/
+		<1>, /*MTK_DRM_OPT_HBM*/
+		<0>, /*MTK_DRM_OPT_VDS_PATH_SWITCH*/
+		<0>, /*MTK_DRM_OPT_LAYER_REC*/
+		<0>, /*MTK_DRM_OPT_CLEAR_LAYER*/
+		<1>, /*MTK_DRM_OPT_LFR*/
+		<1>; /*MTK_DRM_OPT_DYN_MIPI_CHANGE*/
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 };
 
 &dsi0 {
@@ -309,6 +361,7 @@
 	};
 };
 
+<<<<<<< HEAD
 / {
 	disp_leds {
 		compatible = "mediatek,disp-leds";
@@ -320,6 +373,16 @@
 			trans-bits = <12>;
 			default-state = "on";
 		};
+=======
+&disp_leds {
+	compatible = "mediatek,disp-leds";
+	backlight {
+		label = "lcd-backlight";
+		max-brightness = <4095>;
+		led-bits = <12>;
+		trans-bits = <12>;
+		default-state = "on";
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 };
 
@@ -372,8 +435,15 @@
 		vib_limit = <9>;
 		vib_vol= <9>;
 	};
+<<<<<<< HEAD
 	
 /* sensor start */
+=======
+/* sensor start */
+	sensor_fb: sensor_fb {
+		compatible = "oplus,sensor-feedback";
+	};
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	/*
 	enum {
 		LIS3DH,
@@ -623,6 +693,7 @@
 	};
 /* sensor end */
 
+<<<<<<< HEAD
         kpd_volume_down:kpd_volume_down {
                 compatible = "mediatek, VOLUME_DOWN-eint";
                 interrupt-parent = <&pio>;
@@ -631,12 +702,25 @@
                 status = "okay";
         };
 
+=======
+	oplus_boardid:oplus_boardid {
+		compatible = "oplus,oplus_boardid";
+		oplus_boardid,dtsino="20355";//only one u32
+		oplus_boardid,pcbmask="0x003c";//all mask 0xffff
+	};
+
+/* OPLUS_BUG_STABILITY oplus project start */
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	oplus_project:oplus_project {
 		compatible = "oplus,oplus_project";
 	};
 	oplus_devinfo:oplus_devinfo {
 		compatible = "oplus-devinfo";
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		io-channels = <&auxadc 8>;
 		io-channel-names = "vph_pwr_voltage_sub";
 
@@ -662,6 +746,18 @@
 			match-projects = <20181 20182 20355>;
 		};
 	};
+<<<<<<< HEAD
+=======
+/* OPLUS_BUG_STABILITY oplus project end */
+
+	kpd_volume_down:kpd_volume_down {
+			compatible = "mediatek, VOLUME_DOWN-eint";
+			interrupt-parent = <&pio>;
+			interrupts = <57 IRQ_TYPE_EDGE_FALLING 57 0>;/*TRQ num 57 is linked with gpio114 (mt6877)*/
+			debounce = <32000>;
+			status = "okay";
+	};
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 
 };
 
@@ -688,7 +784,11 @@
                         slew-rate = <0>;  /*direction 0:in, 1:out*/
                         input-enable;
                 };
+<<<<<<< HEAD
         };
+=======
+	};
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 };
 
 /* GPS GPIO standardization start */
@@ -767,7 +867,10 @@
 	/*1:ACC mode, 2:low cost without in bias, 6:low cost with in bias*/
 	accdet-mic-mode = <2>;
 	/*0--MD_MAX--UP_MAX--DW_MAX*/
+<<<<<<< HEAD
 	//#ifdef OPLUS_ARCH_EXTENDS
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	headset-three-key-threshold = <0 82 170 306>;
 	//#else
 	//headset-three-key-threshold = <0 80 220 400>;
@@ -825,6 +928,51 @@
 	};
 };
 
+<<<<<<< HEAD
+=======
+//#ifdef OPLUS_TFA98XX
+&i2c6 {
+	tfa98xx: tfa98xx@34 {
+		compatible = "nxp,tfa98xx";
+		reg = <0x34>;
+		status = "okay";
+	};
+};
+
+&pio {
+	fsa_hs_det: fsa_hs_det {
+		pins_cmd_dat {
+			pinmux = <PINMUX_GPIO169__FUNC_GPIO169>;
+			slew-rate = <1>;  /*direction 0:in, 1:out*/
+			output-high;
+		};
+	};
+};
+
+&i2c6 {
+	fsa4480: fsa4480@42 {
+		compatible = "qcom,fsa4480-i2c";
+		reg = <0x42>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&fsa_hs_det>;
+		fsa4480,hs-det-gpio = <&pio 169 0>;
+		fsa4480,dynamic-sense-to-gnd = <1>;
+	};
+};
+
+&i2c9 {
+	tfa98xx_haptic: tfa98xx_haptic@34 {
+		compatible = "tfa,tfa_haptic";
+		reg = <0x34>;
+		reset-gpio = <&pio 32 0>;
+		i2s-id = <1>;
+		status = "okay";
+	};
+};
+
+//#endif
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 /* FINGERPRINT start */
 &oplus_fp_common {
     oplus,fp_gpio_num = <1>;
@@ -835,8 +983,19 @@
     goodix_optical {
         oplus,fp-id = <0>; // fp id mapping table
         vendor-chip = <11>; // please refer to the struct fp_vendor_t in oplus_fp_commmon.n
+<<<<<<< HEAD
         eng-menu = "-1,-1"; // represents SNR, inclination test item in engineer menu, and 0/1 means off/on 
         chip-name = "G_OPTICAL_G3S";  // /proc/fp_id, will be displayed in engineer menu 
+=======
+        eng-menu = "-1,-1"; // represents SNR, inclination test item in engineer menu, and 0/1 means off/on
+        chip-name = "G_OPTICAL_G3S";  // /proc/fp_id, will be displayed in engineer menu
+	};
+    goodix_optical_bak {
+        oplus,fp-id = <1>; // fp id mapping table
+        vendor-chip = <11>; // please refer to the struct fp_vendor_t in oplus_fp_commmon.n
+        eng-menu = "-1,-1"; // represents SNR, inclination test item in engineer menu, and 0/1 means off/on
+        chip-name = "G_OPTICAL_G3S";  // /proc/fp_id, will be displayed in engineer menu
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 };
 
@@ -967,6 +1126,7 @@ gpio_goodix_cs_func: gpio_goodix_cs_func {
 		chipset-20355 = "SN100T";
 	};
 	//#endif /* OPLUS_FEATURE_NFC_CONSOFT */
+<<<<<<< HEAD
 //#ifdef OPLUS_FEATURE_TP_BASIC
     oplus_sim_detect {
         compatible = "oplus, sim_detect";
@@ -1015,6 +1175,9 @@ gpio_goodix_cs_func: gpio_goodix_cs_func {
 
 //#endif
 
+=======
+};
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #include <oplus6877_20355_v1/cust.dtsi>
 #include "mediatek/cust_mt6877_oplus_garen_charge_v1.dtsi"
 #include "mediatek/cust_mt6877_touch_1080x2300.dtsi"

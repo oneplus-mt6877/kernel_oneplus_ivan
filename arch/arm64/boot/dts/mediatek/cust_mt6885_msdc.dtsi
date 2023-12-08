@@ -72,6 +72,10 @@
 //#else
 //	status = "okay";
 //#endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #ifndef CONFIG_FPGA_EARLY_PORTING
 	vmmc-supply = <&mt_pmic_vmch_ldo_reg>;
 	vqmmc-supply = <&mt_pmic_vmc_ldo_reg>;

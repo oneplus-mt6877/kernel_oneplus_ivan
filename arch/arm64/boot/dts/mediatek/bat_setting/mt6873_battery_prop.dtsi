@@ -12,6 +12,7 @@
  */
 bat_gm30: battery{
 	compatible = "mediatek,bat_gm30";
+<<<<<<< HEAD
 	DIFFERENCE_FULLOCV_ITH = <(200)>;
 /*	Charging termination current*/
 	SHUTDOWN_1_TIME = <(5)>;
@@ -19,12 +20,29 @@ bat_gm30: battery{
 	KEEP_100_PERCENT = <(1)>;
 /*	The ui_soc will keep 100% until SOC drop X percents after unplugged*/
 	R_FG_VALUE = <(5)>;
+=======
+/*ifdef OPLUS_FEATURE_CHG_BASIC*/
+	io-channels = <&auxadc 6>;
+	io-channel-names = "auxadc6-batt_id_v";
+/*endif OPLUS_FEATURE_CHG_BASIC*/
+	DIFFERENCE_FULLOCV_ITH = <(200)>;
+/*	Charging termination current*/
+	SHUTDOWN_1_TIME = <(30)>;
+/*	If ui_soc shows 1% more than X minites, system will shutdown*/
+	KEEP_100_PERCENT = <(1)>;
+/*	The ui_soc will keep 100% until SOC drop X percents after unplugged*/
+	R_FG_VALUE = <(10)>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 /*	R_sense resistance*/
 	EMBEDDED_SEL = <(0)>;
 /*	Configures whether using embedded battery or not*/
 	PMIC_SHUTDOWN_CURRENT = <(20)>;
 /*	System shutdown current*/
+<<<<<<< HEAD
 	FG_METER_RESISTANCE = <(100)>;
+=======
+	FG_METER_RESISTANCE = <(60)>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 /*	The resistance of PCB*/
 	CAR_TUNE_VALUE = <(100)>;
 /*	Tune value for current measurement*/
@@ -44,6 +62,7 @@ bat_gm30: battery{
 /*	Battery temperature T3*/
 	TEMPERATURE_T4 = <(-10)>;
 /*	Battery temperature T4*/
+<<<<<<< HEAD
 	g_FG_PSEUDO100_T0 = <(100)>;
 /*	Pseudo 100% percentage at T0*/
 	g_FG_PSEUDO100_T1 = <(100)>;
@@ -53,6 +72,17 @@ bat_gm30: battery{
 	g_FG_PSEUDO100_T3 = <(100)>;
 /*	Pseudo 100% percentage at T3*/
 	g_FG_PSEUDO100_T4 = <(100)>;
+=======
+	g_FG_PSEUDO100_T0 = <(98)>;
+/*	Pseudo 100% percentage at T0*/
+	g_FG_PSEUDO100_T1 = <(98)>;
+/*	Pseudo 100% percentage at T1*/
+	g_FG_PSEUDO100_T2 = <(102)>;
+/*	Pseudo 100% percentage at T2*/
+	g_FG_PSEUDO100_T3 = <(102)>;
+/*	Pseudo 100% percentage at T3*/
+	g_FG_PSEUDO100_T4 = <(95)>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 /*	Pseudo 100% percentage at T4*/
 	Q_MAX_SYS_VOLTAGE_BAT0 = <(3350)>;
 /*	Pseudo1 for hide percentage*/
@@ -62,16 +92,29 @@ bat_gm30: battery{
 /*	Pseudo1 for hide percentage*/
 	Q_MAX_SYS_VOLTAGE_BAT3 = <(3350)>;
 /*	Pseudo1 for hide percentage*/
+<<<<<<< HEAD
 	COM_FG_METER_RESISTANCE = <(100)>;
+=======
+	COM_FG_METER_RESISTANCE = <(60)>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 /*	compensate The resistance of PCB*/
 	COM_R_FG_VALUE = <(0)>;
 /*	compensate R_sense resistance*/
 	enable_tmp_intr_suspend = <(0)>;
 /* Enable update temp when suspend */
+<<<<<<< HEAD
 	ACTIVE_TABLE = <(0)>;
 /* Table numbers per battery*/
 	MULTI_TEMP_GAUGE0 = <(1)>;
 /* Multi gauge0 enable*/
 #include "mt6873_battery_table.dtsi"
+=======
+	ACTIVE_TABLE = <(5)>;
+/* Table numbers per battery*/
+	MULTI_TEMP_GAUGE0 = <(1)>;
+/* Multi gauge0 enable*/
+/*#include "mt6873_battery_table.dtsi"*/
+#include "mt6873_battery_table_ext.dtsi"
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 #include "mt6873_battery_prop_dim2_ext.dtsi"
 };

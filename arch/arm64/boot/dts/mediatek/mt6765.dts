@@ -247,6 +247,17 @@
 		#size-cells = <2>;
 		ranges;
 
+<<<<<<< HEAD
+=======
+		reserve-memory-ssmr {
+			compatible = "mediatek,reserve-memory-ssmr";
+			no-map;
+			size = <0 0x1000>;
+			alignment = <0 0x1000>;
+			alloc-ranges = <0 0xc0000000 4 0x00000000>;
+		};
+
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		zmc-default {
 			compatible = "mediatek,zone_movable_cma";
 			size = <0 0xffc00000>;
@@ -291,6 +302,7 @@
 			alloc-ranges = <0 0x40000000 0 0x80000000>;
 		};
 
+<<<<<<< HEAD
 #ifdef CONFIG_MICROTRUST_TEE_SUPPORT
 		soter-shared-mem {
 			compatible = "microtrust,shared_mem";
@@ -307,6 +319,8 @@
 		};
 #endif
 
+=======
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	};
 
 	cpu_dbgapb: cpu_dbgapb@0d410000 {
@@ -1846,7 +1860,11 @@
 		clock-names = "conn";
 	};
 
+<<<<<<< HEAD
 	wifi@18000000 {
+=======
+	wifi: wifi@18000000 {
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		compatible = "mediatek,wifi";
 		reg = <0 0x18000000 0 0x100000>;
 		interrupts = <GIC_SPI 268 IRQ_TYPE_LEVEL_LOW>;
@@ -2928,12 +2946,20 @@
 
 	memory_ssmr_features: memory-ssmr-features {
 		compatible = "mediatek,memory-ssmr-features";
+<<<<<<< HEAD
 		svp-size = <0 0x10000000>;
+=======
+		svp-region-based-size = <0 0x10000000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		iris-recognition-size = <0 0x10000000>;
 		2d_fr-size = <0 0>;
 		tui-size = <0 0x4000000>;
 		wfd-size = <0 0x4000000>;
+<<<<<<< HEAD
 		prot-sharedmem-size = <0 0x8000000>;
+=======
+		prot-region-based-size = <0 0x8000000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		ta-elf-size = <0 0x1000000>;
 		ta-stack-heap-size = <0 0x6000000>;
 		sdsp-tee-sharedmem-size = <0 0x1000000>;
@@ -3090,6 +3116,10 @@
 		mediatek,clkbuf-driving-current = <1 1 1 1 1 1 1>;
 	};
 
+<<<<<<< HEAD
+=======
+	i2c7:i2c7{};
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	i2c8:i2c8{};
 	i2c9:i2c9{};
 	smart_pa: smart_pa{};

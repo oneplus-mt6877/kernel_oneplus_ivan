@@ -101,15 +101,22 @@ ENTRY(oplus_root_check)
 	beq	4f
 #endif
 */
+<<<<<<< HEAD
 	cmp	x26, #__NR_SETRESGID
 	beq	2b
 	sub	x15, x26, #__NR_SETREGID
+=======
+	cmp	x26, #__NR_setresgid
+	beq	2b
+	sub	x15, x26, #__NR_setregid
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	cmp	x15, #0x4
 	b.ls	2b
 //	b	5f
 
 #ifdef CONFIG_COMPAT
 4:
+<<<<<<< HEAD
 	cmp	x26, #__NR_SETREUID32
 	beq	2b
 	cmp	x26, #__NR_SETREGID32
@@ -121,6 +128,19 @@ ENTRY(oplus_root_check)
 	cmp	x26, #__NR_SETUID32
 	beq	2b
 	cmp	x26, #__NR_SETGID32
+=======
+	cmp	x26, #__NR_setreuid32
+	beq	2b
+	cmp	x26, #__NR_setregid32
+	beq	2b
+	cmp	x26, #__NR_setresuid32
+	beq	2b
+	cmp	x26, #__NR_setresgid32
+	beq	2b
+	cmp	x26, #__NR_setuid32
+	beq	2b
+	cmp	x26, #__NR_setgid32
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 	beq	2b
 #endif
 
@@ -136,4 +156,8 @@ ENTRY(oplus_root_check)
 	mov	x0, #0
 	bl	oplus_root_reboot
 
+<<<<<<< HEAD
 END(oplus_root_check)
+=======
+END(oplus_root_check)
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes

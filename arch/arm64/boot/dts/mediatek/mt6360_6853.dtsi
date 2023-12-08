@@ -173,7 +173,11 @@
 			regulator-compatible = "LDO1";
 			regulator-name = "VFP";
 			regulator-min-microvolt = <1200000>;
+<<<<<<< HEAD
 			regulator-max-microvolt = <3000000>;
+=======
+			regulator-max-microvolt = <3600000>;
+>>>>>>> df3eb130c31d... arch/arm64: Import Oneplus changes
 		};
 		mt_pmic_vtp_ldo_reg: ldo2 {
 			regulator-compatible = "LDO2";
